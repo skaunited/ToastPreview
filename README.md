@@ -6,7 +6,7 @@
 
 
 
-**ToastPreview** is an iOS SDK that allows you to easily present customizable toast notifications at the bottom of the screen. You can customize the background, text, and symbol, and even control user interaction with the toast.
+**ToastPreview** is an iOS SDK that allows you to easily present customizable toast notifications at the bottom of the screen. You can customize the background, text, and symbol, and even control user interaction within the toast.
 
 ## Compatibility
 
