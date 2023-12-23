@@ -9,12 +9,16 @@ import SwiftUI
 import UIKit
 
 ///RootView for creating overlay windows.
-struct RootView<Content: View>: View {
-    @ViewBuilder var content: Content
+public struct RootView<Content: View>: View {
+    @ViewBuilder public var content: Content
     /// View Properties
     @State private var overlayWindow: UIWindow?
-    
-    var body: some View {
+	
+	public init(@ViewBuilder content: () -> Content) {
+		self.content = content()
+	}
+	
+	public var body: some View {
         content
             .onAppear {
                 if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, overlayWindow == nil {

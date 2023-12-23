@@ -8,11 +8,11 @@
 import SwiftUI
 
 @Observable
-class Interactor {
-	static let shared = Interactor()
+public class Interactor {
+	public static let shared = Interactor()
 	var toasts: [ToastItem] = []
 	
-	func present(background: Color = .primary,
+	public func present(background: Color = .primary,
 				 isUserINteractionEnabled: Bool = false,
 				 symbol: String?,
 				 symbolTint: Color = .blue,
