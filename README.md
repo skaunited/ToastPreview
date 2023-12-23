@@ -36,7 +36,7 @@ struct YourApp: App {
 ```
 
 ### Step 2: Usage in Any View
-Now you can use the `Interactor` class from `ToastPreview to present toasts from any view in your app. Customize the toast as needed:
+Now you can use the `Interactor` class from `ToastPreview` to present toasts from any view in your app. Customize the toast as needed :
 
 ```swift
 import SwiftUI
