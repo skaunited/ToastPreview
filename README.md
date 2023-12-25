@@ -58,12 +58,14 @@ struct ContentView: View {
 	var body: some View {
 		VStack {
 			Button(action: {
-				ToastViewManager.shared.present(background: .red,
-												symbol: "globe",
-												symbolTint: .green,
-												timing: .medium,
-												title: "Hello World",
-												titleTint: .yellow)
+				ToastViewManager.shared.present(
+					background: .red,
+					symbol: "globe",
+					symbolTint: .green,
+					timing: .medium,
+					title: "Hello World",
+					titleTint: .yellow
+				)
 			}, label: {
 				Text("Present Toaster")
 			})
