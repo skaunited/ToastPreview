@@ -19,12 +19,12 @@ public struct ToastItem: Identifiable {
 	public let titleTint: Color
 	
 	public init(background: Color,
-				isUserINteractionEnabled: Bool,
-				symbol: String? = nil,
-				symbolTint: Color,
-				timing: ToastTime,
-				title: String,
-				titleTint: Color) {
+		 isUserINteractionEnabled: Bool,
+		 symbol: String? = nil,
+		 symbolTint: Color,
+		 timing: ToastTime,
+		 title: String,
+		 titleTint: Color) {
 		self.background = background
 		self.isUserINteractionEnabled = isUserINteractionEnabled
 		self.symbol = symbol

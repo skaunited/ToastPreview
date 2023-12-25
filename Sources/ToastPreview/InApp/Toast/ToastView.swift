@@ -1,5 +1,5 @@
 //
-//  Toast.swift
+//  ToastView.swift
 //  ToastPreview
 //
 //  Created by Skander BAHRI on 20/12/2023.
@@ -8,31 +8,30 @@
 import SwiftUI
 import UIKit
 
-struct ToastView: View {
-    var size: CGSize
-    var item: ToastItem
-
+struct ToastView<T>: View where T: ToastViewPresenterProtocol {
+	var presenter: T
+	
     @State private var delayTask: DispatchWorkItem?
 
     var body: some View {
         HStack(spacing: GraphicStaticValues.zero) {
-            if let symbol = item.symbol {
+			if let symbol = presenter.item.symbol {
                 Image(systemName: symbol)
                     .font(.title3)
                     .padding(.trailing, GraphicStaticValues.eight)
-                    .foregroundColor(item.symbolTint)
+					.foregroundColor(presenter.item.symbolTint)
             }
             
-            Text(item.title)
+			Text(presenter.item.title)
                 .lineLimit(2)
-                .foregroundColor(item.titleTint)
+				.foregroundColor(presenter.item.titleTint)
         }
-        .foregroundColor(item.background)
+		.foregroundColor(presenter.item.background)
         .padding(.horizontal, GraphicStaticValues.sixteen)
         .padding(.vertical, GraphicStaticValues.eight)
 		.background(
 			Capsule()
-				.fill(item.background)
+				.fill(presenter.item.background)
 		)
         .background(
 			.background
@@ -51,7 +50,7 @@ struct ToastView: View {
         .gesture(
             DragGesture(minimumDistance: GraphicStaticValues.zero)
                 .onEnded {  value in
-                    guard item.isUserINteractionEnabled else { return }
+					guard presenter.item.isUserINteractionEnabled else { return }
                     let endY = value.translation.height
                     let velocityY = value.velocity.height
                     
@@ -68,10 +67,10 @@ struct ToastView: View {
             })
             
             if let delayTask {
-                DispatchQueue.main.asyncAfter(deadline: .now() + item.timing.rawValue, execute: delayTask)
+				DispatchQueue.main.asyncAfter(deadline: .now() + presenter.item.timing.rawValue, execute: delayTask)
             }
         }
-        .frame(maxWidth: size.width * GraphicStaticValues.eightTenths)
+		.frame(maxWidth: presenter.size.width * GraphicStaticValues.eightTenths)
         .transition(.offset(y: 150))
     }
     
@@ -81,14 +80,7 @@ struct ToastView: View {
         }
                 
         withAnimation(.snappy) {
-            Interactor.shared.toasts.removeAll(where: {$0.id == item.id})
+			presenter.removeToast(with: presenter.item.id)
         }
-    }
-}
-
-
-#Preview {
-    RootView {
-        ContentView()
     }
 }

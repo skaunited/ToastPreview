@@ -1,5 +1,5 @@
 //
-//  Interactor.swift
+//  ToastViewManager.swift
 //  ToastPreview
 //
 //  Created by Skander BAHRI on 21/12/2023.
@@ -8,9 +8,11 @@
 import SwiftUI
 
 @Observable
-public class Interactor {
-	public static let shared = Interactor()
+public class ToastViewManager {
+	public static let shared = ToastViewManager()
 	var toasts: [ToastItem] = []
+	
+	public init() {}
 	
 	public func present(background: Color = .primary,
 						isUserINteractionEnabled: Bool = false,

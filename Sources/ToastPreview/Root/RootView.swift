@@ -24,7 +24,7 @@ public struct RootView<Content: View>: View {
                 if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, overlayWindow == nil {
                     let window = PassthrougWindow(windowScene: windowScene)
                     /// View Controller
-                    let rootController = UIHostingController(rootView: ToastsHolder())
+					let rootController = UIHostingController(rootView: ToastsHolder(presenter: ToastsHolderPresenter()))
                     rootController.view.frame = windowScene.keyWindow?.frame ?? .zero
                     rootController.view.backgroundColor = .clear
                     
