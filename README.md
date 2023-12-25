@@ -48,30 +48,28 @@ struct YourApp: App {
 ```
 
 ### Step 2: Usage in Any View
-Now you can use the `Interactor` class from `ToastPreview` to present toasts from any view in your app. Customize the toast as needed :
+Now you can use the `ToastViewManager` class from `ToastPreview` to present toasts from any view in your app. Customize the toast as needed :
 
 ```swift
 import SwiftUI
 import ToastPreview
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Button(action: {
-                Interactor.shared.present(
-                    background: .red,
-                    symbol: "globe",
-                    symbolTint: .green,
-                    timing: .medium,
-                    title: "Hello World",
-                    titleTint: .yellow
-                )
-            }, label: {
-                Text("Present Toaster")
-            })
-        }
-        .padding()
-    }
+	var body: some View {
+		VStack {
+			Button(action: {
+				ToastViewManager.shared.present(background: .red,
+												symbol: "globe",
+												symbolTint: .green,
+												timing: .medium,
+												title: "Hello World",
+												titleTint: .yellow)
+			}, label: {
+				Text("Present Toaster")
+			})
+		}
+		.padding()
+	}
 }
 ```
 
