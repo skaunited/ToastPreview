@@ -90,7 +90,12 @@ Feel free to experiment and customize according to your app's design.
 
 ## Example
 <!-- Add a GIF or video demonstrating the usage of ToastPreview in your app -->
+<!DOCTYPE html>
+<html>
 <img src="https://github.com/skaunited/ToastPreview/blob/main/Sources/Demo/toast_demo.gif" width="300" />
+</html>
+
+
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 This should properly embed the code within the sections in a more readable manner.
