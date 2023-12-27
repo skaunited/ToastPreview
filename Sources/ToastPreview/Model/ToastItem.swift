@@ -14,6 +14,7 @@ public struct ToastItem: Identifiable {
 	public let endPoint: UnitPoint?
 	public let gradienColors: [Color]?
 	public let isUserINteractionEnabled: Bool
+	public let shapeType: ShapeType
 	public let startPoint: UnitPoint?
 	public let symbol: String?
 	public let symbolTint: Color
@@ -25,6 +26,7 @@ public struct ToastItem: Identifiable {
 				endPoint: UnitPoint? = nil,
 				gradienColors: [Color]? = nil,
 				isUserINteractionEnabled: Bool,
+				shapeType: ShapeType = .capsule,
 				startPoint: UnitPoint? = nil,
 				symbol: String? = nil,
 				symbolTint: Color,
@@ -35,6 +37,7 @@ public struct ToastItem: Identifiable {
 		self.endPoint = endPoint
 		self.gradienColors = gradienColors
 		self.isUserINteractionEnabled = isUserINteractionEnabled
+		self.shapeType = shapeType
 		self.startPoint = startPoint
 		self.symbol = symbol
 		self.symbolTint = symbolTint

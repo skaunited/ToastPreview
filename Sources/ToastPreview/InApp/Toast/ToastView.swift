@@ -31,17 +31,35 @@ struct ToastView<T>: View where T: ToastViewPresenterProtocol {
         .padding(.vertical, GraphicStaticValues.eight)
 		.background(
 			Group {
-				if presenter.item.isGradienBackground {
-					Capsule()
-						.fill(
-							LinearGradient(colors: presenter.item.gradienColorsWrapper, startPoint: presenter.item.startPointWrapper, endPoint: presenter.item.endPointWrapper)
-						)
-				} else {
-					Capsule()
-						.fill(
-							Color(presenter.item.background)
-						)
+				switch presenter.item.shapeType {
+				case .capsule:
+					if presenter.item.isGradienBackground {
+						Capsule()
+							.fill(
+								LinearGradient(colors: presenter.item.gradienColorsWrapper, startPoint: presenter.item.startPointWrapper, endPoint: presenter.item.endPointWrapper)
+							)
+					} else {
+						Capsule()
+							.fill(
+								Color(presenter.item.background)
+							)
+					}
+				case .rectangle:
+					if presenter.item.isGradienBackground {
+						Rectangle()
+							.fill(
+								LinearGradient(colors: presenter.item.gradienColorsWrapper, startPoint: presenter.item.startPointWrapper, endPoint: presenter.item.endPointWrapper)
+							)
+							.cornerRadius(8)
+					} else {
+						Rectangle()
+							.fill(
+								Color(presenter.item.background)
+							)
+							.cornerRadius(8)
+					}
 				}
+
 			}
 		)
         .background(

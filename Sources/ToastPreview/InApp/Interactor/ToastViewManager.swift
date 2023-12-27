@@ -16,6 +16,7 @@ public class ToastViewManager {
 	
 	public func present(background: Color = .primary,
 						isUserINteractionEnabled: Bool = false,
+						shapeType: ShapeType = .capsule,
 						symbol: String?,
 						symbolTint: Color = .blue,
 						timing: ToastTime = .medium,
@@ -25,6 +26,7 @@ public class ToastViewManager {
 		withAnimation(.snappy) {
 			toasts.append(ToastItem(background: background,
 									isUserINteractionEnabled: isUserINteractionEnabled,
+									shapeType: shapeType,
 									symbol: symbol,
 									symbolTint: symbolTint,
 									timing: timing,
@@ -37,6 +39,7 @@ public class ToastViewManager {
 											 startPoint: UnitPoint,
 											 endPoint: UnitPoint,
 											 isUserINteractionEnabled: Bool = false,
+											 shapeType: ShapeType = .capsule,
 											 symbol: String?,
 											 symbolTint: Color = .blue,
 											 timing: ToastTime = .medium,
@@ -47,6 +50,7 @@ public class ToastViewManager {
 			toasts.append(ToastItem(endPoint: endPoint, 
 									gradienColors: gradienColors,
 									isUserINteractionEnabled: isUserINteractionEnabled,
+									shapeType: shapeType,
 									startPoint: startPoint,
 									symbol: symbol,
 									symbolTint: symbolTint,
