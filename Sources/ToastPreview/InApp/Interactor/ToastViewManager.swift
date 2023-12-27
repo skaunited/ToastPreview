@@ -32,4 +32,27 @@ public class ToastViewManager {
 									titleTint: titleTint))
 		}
 	}
+	
+	public func presentWithGradienBackground(gradienColors: [Color],
+											 startPoint: UnitPoint,
+											 endPoint: UnitPoint,
+											 isUserINteractionEnabled: Bool = false,
+											 symbol: String?,
+											 symbolTint: Color = .blue,
+											 timing: ToastTime = .medium,
+											 title: String,
+											 titleTint: Color = .black) {
+		
+		withAnimation(.snappy) {
+			toasts.append(ToastItem(endPoint: endPoint, 
+									gradienColors: gradienColors,
+									isUserINteractionEnabled: isUserINteractionEnabled,
+									startPoint: startPoint,
+									symbol: symbol,
+									symbolTint: symbolTint,
+									timing: timing,
+									title: title,
+									titleTint: titleTint))
+		}
+	}
 }
