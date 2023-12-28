@@ -95,6 +95,29 @@ Feel free to experiment and customize according to your app's design.
 <img src="https://github.com/skaunited/ToastPreview/blob/main/Sources/Demo/toast_demo.gif" width="300" />
 </html>
 
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<table id="t01">
+  <tr>
+	<td width="25%"><img src="https://github.com/skaunited/ToastPreview/blob/main/Sources/Demo/demo_toast_multi_rectangle.gif" width="300" /></td>
+	<td width="25%"><img src="https://github.com/skaunited/ToastPreview/blob/main/Sources/Demo/demo_toast_rectangle.gif" width="300" /></td>
+	<td width="25%"><img src="https://github.com/skaunited/ToastPreview/blob/main/Sources/Demo/multi_toast_capsule.gif" width="300" /></td>
+	<td width="25%"><img src="https://github.com/skaunited/ToastPreview/blob/main/Sources/Demo/simple_toast_capsule.gif" width="300" /></td>
+  </tr>
+  <tr>
+	<td width="50%"><img src="https://github.com/skaunited/ToastPreview/blob/main/Sources/Demo/demo_multi_toast_gradien_capsule.gif" width="300" /></td>
+	<td width="50%"><img src="https://github.com/skaunited/ToastPreview/blob/main/Sources/Demo/demo_toast_gradien_capsule.gif" width="300" /></td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
